@@ -107,5 +107,24 @@ form.addEventListener("submit", (event) => {
   renderPlan(buildPlan(interests, days));
 });
 
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxCap = document.getElementById("lightbox-cap");
+const lightboxClose = document.getElementById("lightbox-close");
+
+document.querySelectorAll(".shot").forEach((button) => {
+  button.addEventListener("click", () => {
+    lightboxImg.src = button.dataset.full;
+    lightboxImg.alt = button.querySelector("img").alt;
+    lightboxCap.textContent = button.dataset.caption || "";
+    lightbox.showModal();
+  });
+});
+
+lightboxClose.addEventListener("click", () => lightbox.close());
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) lightbox.close();
+});
+
 setKiosk("sanguo");
 renderPlan(plans["1-history-sanguo"]);

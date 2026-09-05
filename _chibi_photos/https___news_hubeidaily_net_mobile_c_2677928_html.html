@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="icon" type="image/x-icon" href="/r/cms/www/default/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/r/cms/www/default/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/r/cms/www/default/libs/swiper3.4.2/swiper-3.4.2.min.css">
+    <link rel="stylesheet" type="text/css" href="/r/cms/www/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/r/cms/www/default/css/detail.css">
+    <script type="text/javascript" src="/r/cms/www/default/libs/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/r/cms/www/default/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/r/cms/www/default/libs/swiper3.4.2/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript" src="/r/cms/www/default/libs/qrcode/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="/r/cms/www/default/libs/vue.min.js"></script>
+    <title>航拍赤壁丨空中俯瞰陆水湖风景区 湖光山色美如画 - 湖北日报新闻客户端</title>
+</head>
+<body>
+<div class="header">
+    <input type="hidden" id="hidChannelId" value="1695" />
+    <input type="hidden" id="hidChannelFromId" value="1695" />
+    <input type="hidden" id="hidChannelName" value="赤壁" />
+    <input type="hidden" id="hidFullSearch" value="/pc/fullsearch.html" />
+    <input type="hidden" id="hidVideoChannel" data-url="/pc/video.html" value="视频" />
+    <input type="hidden" id="hidVideoChannelId" data-url="/pc/video.html" value="5" />
+    <input type="hidden" id="hidSelfMediaChannel" data-url="/pc/selfmedia.html" value="湖北号" />
+    <input type="hidden" id="hidSelfMediaChannelId" data-url="/pc/selfmedia.html" value="3" />
+    <input type="hidden" id="hidFromNewsId" value="2677928" />
+    <input type="hidden" id="hidFromNewsContentId" value="2414611" />
+    <input type="hidden" id="hidContentType" value="5">
+    <input type="hidden" id="hidContentTitle" value="航拍赤壁丨空中俯瞰陆水湖风景区 湖光山色美如画">
+    <input type="hidden" id="hidContentKeyword" value="">
+    <input type="hidden" id="hidMemberId" value="12768">
+    <input type="hidden" id="hidNickName" value="熊锦芳">
+    <input type="hidden" id="hidCreateTime" value='2024-05-28 09:25:37'>
+    <input type="hidden" id="hidReleaseTime" value='2024-05-28 10:24:02'>
+    <input type="hidden" id="hidContentSubjectId" value="0" />
+    <input type="hidden" id="hidContentColumnId" value="0" />
+    <input type="hidden" id="hidContentMediaId" value="0" />
+    <div id="header">
+        <div class="header-w">
+            <div class="head-logo">
+                <a href="/" title="湖北日报新闻客户端">
+                    <img src="/r/cms/www/default/images/logo.png">
+                </a>
+            </div>
+            <div class="head-nav" id="head-nav"></div>
+            <div class="head-info">
+                <a id="registerBtn" href="javascript:;" onclick="showRegist()">注册</a>
+                <a id="loginBtn" href="javascript:;" style="border: none;" onclick="showLogin()">登录</a>
+                <a class="myCollect" data-id="myHistory" href="/pc/mycollect.html" target="_blank">历史</a>
+                <a class="myCollect" data-id="myCollect" href="/pc/mycollect.html" target="_blank">收藏</a>
+                <a id="btnLogout" href="javascript:;"  style="display: none;border: none;">注销</a>
+                <div id="memberInfoDiv" style="display: none;float: right;height: 30px;line-height: 15px;padding-top: 5px;"></div>
+                <div class="search-box">
+                    <div class="search-form" id="searchForm">
+                        <input type="button" id="searchBtn" class="search-btn">
+                        <input type="text" id="searchKey" class="search-key">
+                    </div>
+                    <div class="search-icon" onclick="showSearch(this)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="channel-box" id="channelArea">
+    <div class="arrow-box">
+        <div class="arrow-up"></div>
+    </div>
+    <div class="channel-list-box">
+        <ul class="channel-list clearfix" id="channelAreaList"></ul>
+    </div>
+</div>
+
+<div class="bg-mask" id="mask"></div>
+<!-- 登录-->
+<div class="user-dialog" id="userDialog">
+    <div class="title">
+        <span class="title-con">登录</span>
+        <span class="d-close" onclick="hideUserDialog()"></span>
+    </div>
+    <div class="content">
+        <div class="login-form">
+            <div class="phone-box">
+                <input type="text" id="phone" name="phone" class="phone" placeholder="请输入手机号">
+                <button class="send-code" id="sendCode" onclick="sendCode()">获取验证码</button>
+            </div>
+            <div class="imgcode-box">
+                <input type="text" id="imgCode" name="code" class="imgcode" placeholder="请输入图片验证码">
+                <img id="verifyCodeImage" class="code-img" onclick="refreshVerifyCodeImage()">
+            </div>
+            <div class="verifycode-box">
+                <input type="text" id="verifyCode" name="code" class="verifycode" placeholder="请输入短信验证码">
+            </div>
+            <div class="operate-btns clearfix">
+                <div class="to-regist">没有账户，请先<span onclick="switchRegist()">注册</span></div>
+                <div class="to-login">已有账户，马上<span onclick="switchLogin()">登录</span></div>
+            </div>
+            <div class="login-btn" onclick="submitLogin()">登 录</div>
+        </div>
+        <div class="third-part">
+            <div class="third-title">第三方登录</div>
+            <div class="third-list">
+                <ul class="clearfix">
+                    <li class="third-item">
+                        <a href="javascript:;" class="wechat"></a>
+                    </li>
+                    <li class="third-item">
+                        <a href="javascript:;" class="qq"></a>
+                    </li>
+                    <li class="third-item">
+                        <a href="javascript:;" class="weibo"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="clearfix">
+        <div class="main-left">
+            <div class="news-detail-container">
+                <div class="news-title" id="news-title">航拍赤壁丨空中俯瞰陆水湖风景区 湖光山色美如画</div>
+                <div class="we-media" id="we-media" style="display: none"></div>
+                <div class="news-detail-box">
+                    <div class="source">
+                        <span>湖北日报客户端</span>
+                        <span class="source-item">2024-05-28 10:24:02</span>
+                    </div>
+                    <div class="detail-cont">
+                        <p style="text-align: center;">初夏时节</p><p style="text-align: center;">赤壁陆水湖风景区</p><p style="text-align: center;">水清岸绿，碧波浩渺</p><p style="text-align: center;">从空中俯瞰</p><p style="text-align: center;">美丽的湖光山色</p><p style="text-align: center;">宛如人间仙境</p><p style="text-align: center;"><img src="http://hbrbapp.hubeidaily.net/b228973e-b35c-4e8e-a7aa-f47ac92a5973" data-path="http://hbrbapp.hubeidaily.net/b228973e-b35c-4e8e-a7aa-f47ac92a5973" data-resourceid="15099077"/></p><p style="text-align: center;">透过航拍镜头俯瞰</p><p style="text-align: center;">陆水湖湖水碧绿</p><p style="text-align: center;">湖面波光粼粼</p><p style="text-align: center;">犹如碎钻洒落</p><p style="text-align: center;">数十个小岛点缀其间</p><p style="text-align: center;">仿佛是大自然精心布置的宝石</p><p style="text-align: center;"><img src="http://hbrbapp.hubeidaily.net/446798cb-5b28-4b01-a601-fa0e1e47d8c4" data-path="http://hbrbapp.hubeidaily.net/446798cb-5b28-4b01-a601-fa0e1e47d8c4" data-resourceid="15099075"/></p><p style="text-align: left;">陆水湖风景区水域面积57平方公里，湖中800多座岛屿、半岛星罗棋布，因此，又有“千岛湖”之称。2002年5月，该景区被审批为“国家重点风景名胜区”。景区以山幽、林绿、水清、岛秀闻名遐迩，是避暑消闲、旅游度假、康复疗养及水上运动的理想之地。</p><p style="text-align: center;"><img src="http://hbrbapp.hubeidaily.net/2370103d-45cb-4907-b107-3528525cc641.jpg-w800" data-path="http://hbrbapp.hubeidaily.net/2370103d-45cb-4907-b107-3528525cc641.jpg-w800" data-resourceid="15099218"/></p><p style="text-align: center;">陆水湖风景区</p><p style="text-align: center;">青山起伏连绵，满目青翠</p><p style="text-align: center;">湖天一色，景美如画</p><p style="text-align: center;">在阳光的照耀下</p><p style="text-align: center;">湖水清澈见底，波光粼粼</p><p style="text-align: center;">仿佛一幅闪耀着光芒的画卷</p><p style="text-align: center;"><img src="http://hbrbapp.hubeidaily.net/56139dfe-4453-4868-8b74-9a50eb03538e" data-path="http://hbrbapp.hubeidaily.net/56139dfe-4453-4868-8b74-9a50eb03538e" data-resourceid="15099073"/></p><p style="text-align: left;">陆水湖风景名胜区以三国赤壁文化、碧湖千岛风光为特色，观光揽胜、生态悠闲为主要功能。陆水因三国黄武年间东吴大都督陆逊驻军于蒲圻（今赤壁），于此练兵屯田而得名。</p><p style="text-align: center;"><img src="http://hbrbapp.hubeidaily.net/7a6b94f8-6054-40be-ad1a-72cfdb41cbcc" data-path="http://hbrbapp.hubeidaily.net/7a6b94f8-6054-40be-ad1a-72cfdb41cbcc" data-resourceid="15099072"/></p><p style="text-align: center;">沿湖四周是座座青山</p><p style="text-align: center;">山上林木茂盛，郁郁葱葱</p><p style="text-align: center;">翠绿的树木倒映在</p><p style="text-align: center;">清澈的湖水中</p><p style="text-align: center;">影影绰绰，朦朦胧胧</p><p style="text-align: center;">别有一番意境</p><p style="text-align: center;"><img src="http://hbrbapp.hubeidaily.net/9c5b4fbb-f9f8-46bf-9b53-94b9de8051c7.jpg-w800" data-path="http://hbrbapp.hubeidaily.net/9c5b4fbb-f9f8-46bf-9b53-94b9de8051c7.jpg-w800" data-resourceid="15099126"/></p><p style="text-align: center;">初夏的第一场旅行</p><p style="text-align: center;">一起去陆水湖风景区吧</p><p style="text-align: center;">迎着夏日微风</p><p style="text-align: center;">感知岁月静好</p><p style="text-align:center"><img src="http://hbrbapp.hubeidaily.net/b88a218a-5ab0-4e93-a51c-9fa14c6a456e" data-path="http://hbrbapp.hubeidaily.net/b88a218a-5ab0-4e93-a51c-9fa14c6a456e" data-resourceid="15099070"/></p><p style="text-align: left;"><span style="font-size: 14px; color: rgb(191, 191, 191);">通讯员：孙芬 高璋琦</span></p><p style="text-align: left;"><span style="font-size: 14px; color: rgb(191, 191, 191);">编审：吕蓉</span></p><p style="text-align: left;"><span style="font-size: 14px; color: rgb(191, 191, 191);">编校：辛晓莉</span></p>
+                    </div>
+                    <div class="content-edit">
+                        <span>责任编辑：熊锦芳</span>
+                    </div>
+                    <div class="praise-collect-box">
+                        <div class="praise-box">
+                            <span class="praise">点赞 0</span>
+                        </div>
+                        <div class="collect-box">
+                            <span class="collect">收藏</span>
+                        </div>
+                    </div>
+                    <div class="share-box">
+                        <ul>
+                            <li class="share-wechat icon wechat" data-link="https://news.hubeidaily.net/mobile/mobile/c_2677928.html">
+                                <span class="icon wechat"></span>
+                                <span>微信</span>
+                            </li>
+                            <li class="share-weibo" title="分享到微博" data-link="https://news.hubeidaily.net/mobile/mobile/c_2677928.html" data-title="航拍赤壁丨空中俯瞰陆水湖风景区 湖光山色美如画" data-pic="http://hbrbapp.hubeidaily.net/b228973e-b35c-4e8e-a7aa-f47ac92a5973">
+                                <span class="icon weibo"></span>
+                                <span>微博</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="related-news-title">
+                <div class="box-title">
+                    <span id="related-news-title-span"></span>
+                </div>
+            </div>
+            <div class="related-news-container">
+                <ul class="related-news-list clearfix" id="related-news-list">
+                </ul>
+            </div>
+            <div class="news-comments">
+                <div class="news-comment-new">
+                    <textarea id="commText" class="comment-text" autoHeight="true" placeholder="我要跟帖..."></textarea>
+                    <div class="text-right">
+                        <span class="word-tip">已输入<span id="wordNum">0</span>个字</span>
+                    </div>
+                    <div class="text-right">
+                        <button class="submit-btn" id="submit-btn">发表</button>
+                    </div>
+                </div>
+                <div class="box-title">
+                    <span>全部评论</span>
+                </div>
+                <div class="news-comment-list" id="newsCommentList">
+                    <ul class="clearfix" v-if="!!commentList && commentList.length > 0">
+                        <li class="comment-item" v-for="item in commentList">
+                            <div class="portrait">
+                                <div class="img">
+                                    <img :src="item.memberImg">
+                                </div>
+                                <img :class="'pos pos'+item.identityInfo.topLeftResourceId" :src="item.identityInfo.bottomResourceUrl" v-if="!!item.identityInfo && JSON.stringify(item.identityInfo) != '{}'"/>
+                            </div>
+                            <div class="text">
+                                <div class="clearfix">
+                                    <div class="name" v-text="item.memberName"></div>
+                                    <div class="create-time" v-text="item.createdTime"></div>
+                                    <div class="praise-box">
+                                        <span class="praise" v-text="item.topCount" @click="onClickCommentPraise($event, item)"></span>
+                                    </div>
+                                    <div class="reply" @click="showReplay(item)">回复</div>
+                                </div>
+                                <div class="comm-text" v-html="item.comment"></div>
+                                <div class="comm-replay" v-if="item.isReplay">
+                                    <textarea :id="'commText'+item.id" class="comment-text" placeholder="我要回复..."></textarea>
+                                    <div class="text-right">
+                                        <button class="submit-btn" @click="submitReplay(item)">发表</button>
+                                    </div>
+                                </div>
+                                <div class="sub_comm" v-if="item.replyCount > 0">
+                                    <ul class="sub_comm_list">
+                                        <li class="sub_comm_item" v-for="subItem in item.childArray" :key="subItem.id">
+                                            <div class="clearfix">
+                                                <span class="name" v-text="subItem.memberName"></span>
+                                                <span class="create-time" v-text="subItem.createdTime"></span>
+                                                <div class="praise-box">
+                                                    <span class="praise" v-text="subItem.topCount" @click="onClickCommentPraise($event, subItem)"></span>
+                                                </div>
+                                            </div>
+                                            <div class="comm-text" v-html="subItem.comment"></div>
+                                        </li>
+                                        <li class="sub_comm_item" v-if="item.replyCount > 2 && item.childArray.length <= 2">
+                                            <span class="sub_comm_more" @click="onClickCommentMoreReply(item)" v-if="item.replyCount <= 10">查看全部{{ item.replyCount }}条回复></span>
+                                            <span class="sub_comm_more" @click="onClickCommentMoreReply(item)" v-else>查看更多回复></span>
+                                        </li>
+                                        <li class="sub_comm_item" v-else-if="item.replyCount > 2 && item.childArray.length > 2 && item.replyCount > item.childArray.length">
+                                            <span class="sub_comm_more" @click="onClickCommentMoreReply(item)">查看更多回复></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="load-more-box">
+                        <span class="load-more" v-if="!commentLoadOver" @click="loadMoreComment">查看更多评论<span class="down"></span></span>
+                        <span v-else>没有更多评论了</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-right">
+            <div class="epa-box">
+                <div class="box-title">
+                    <span>电子报</span>
+                </div>
+                <div class="epa-img">
+                    <a href="http://hbrb.cnhubei.com/cache/paper_hbrb.aspx" id="newsPic" target="_blank"></a>
+                </div>
+                <div class="epa-tabs">
+                    <ul class="clearfix">
+                        <li class="tab-item on">湖北日报</li>
+                        <li class="tab-item len">楚天都市报</li>
+                        <li class="tab-item">农村新报</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="activity-report-box">
+                <div class="box-title">
+                    <span>政情</span>
+                </div>
+                <div class="leader-list">
+                    <ul class="clearfix" id="leader-list">
+                    </ul>
+                </div>
+            </div>
+            <div class="recommend-box">
+                <div class="box-title">
+                    <span>精彩推荐</span>
+                </div>
+                <div class="recommend-list">
+                    <ul id="recommend-list">
+                    </ul>
+                </div>
+            </div>
+            <div class="qrcode-box">
+                <ul class="qrcode-list">
+                    <li class="qrcode-item">
+                        <img src="/r/cms/www/default/images/qrcode_app.jpg">
+                        <span>湖北日报客户端</span>
+                    </li>
+                    <li class="qrcode-item">
+                        <img src="/r/cms/www/default/images/qrcode_wechat.jpg">
+                        <span>湖北日报官方微信</span>
+                    </li>
+                    <li class="qrcode-item">
+                        <img src="/r/cms/www/default/images/qrcode_weibo.png">
+                        <span>湖北日报官方微博</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="foot-link">
+        <ul class="link-list clearfix">
+            <li class="link-item"><a href="https://www.hubeidaily.net/GroupSurvey.html" target="_blank">湖北日报集团简介</a></li>
+            <li class="link-item"><a href="https://epaper.hubeidaily.net"  target="_blank">湖北日报数字报</a></li>
+            <li class="link-item"><a href="http://www.hubeidaily.net/PublicNotice/"  target="_blank">公示公告</a></li>
+            <li class="link-item"><a href="/pc/legalStatement.html">法律声明</a></li>
+            <li class="link-item"><a href="/pc/contactUs.html">联系我们</a></li>
+        </ul>
+    </div>
+    <div class="foot-cp clearfix">
+        <div class="copyright">
+            <span>Copyright © 湖北日报 [鄂ICP备12007957-2号]</span>
+            <span>|</span>
+            <span>湖北日报传媒集团出品</span>
+        </div>
+        <div class="iconlist">
+            <a href="javascript:;"><img src="/r/cms/www/default/images/ft_icon1.png"></a>
+            <a href="javascript:;"><img src="/r/cms/www/default/images/ft_icon2.png"></a>
+            <a href="javascript:;"><img src="/r/cms/www/default/images/ft_icon3.png"></a>
+            <a href="javascript:;"><img src="/r/cms/www/default/images/ft_icon4.png"></a>
+        </div>
+    </div>
+</div>
+
+<script src="/r/cms/www/default/libs/zDialog/zDialog.js"></script>
+<script type="text/javascript" src="/r/cms/www/default/js/md5.min.js"></script>
+<script type="text/javascript" src="/r/cms/www/default/js/common.js"></script>
+<script type="text/javascript" src="/r/cms/www/default/js/header.js"></script>
+<script type="text/javascript" src="/r/cms/www/default/js/right.js"></script>
+<script type="text/javascript" src="/r/cms/www/default/js/hdbDetail.js"></script>
+<script type="text/javascript" src="/r/cms/www/default/js/statistics_tj.js"></script>
+<script type="text/javascript">document.write(unescape("%3Cspan style='display: none !important' id='cnzz_stat_icon_1281085254'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1281085254' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+    $("#commText").keyup(function(){
+        var n = $(this).val().length;
+        $("#wordNum").text(n);
+    });
+
+
+    $(function(){
+        var localUrl = window.location.href;
+        var url = localUrl;
+        $('.share-weibo').data('link',url);
+        $('.share-wechat').data('link',url);
+        $.fn.autoHeight = function(){
+            function autoHeight(elem){
+                elem.style.height = 'auto';
+                elem.scrollTop = 0; //防抖动
+                elem.style.height = elem.scrollHeight + 'px';
+            }
+            this.each(function(){
+                autoHeight(this);
+                $(this).on('keyup', function(){
+                    autoHeight(this);
+                });
+            });
+        }
+        $('textarea[autoHeight]').autoHeight();
+
+    })
+</script>
+</body>
+</html>

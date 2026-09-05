@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>畅游赤壁 · 20张文旅宣传照片</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --ink: #1c1712;
+      --muted: #6b6258;
+      --line: #d9d0c3;
+      --card: #fffdf8;
+      --accent: #8b1e1e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    header {
+      padding: 48px 24px 32px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      letter-spacing: 0.28em;
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.2;
+      margin: 0 0 16px;
+      font-weight: 700;
+    }
+    .lead, .note {
+      font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 720px;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      font-family: "Noto Sans SC", sans-serif;
+      font-size: 13px;
+    }
+    nav.toc {
+      max-width: 1120px;
+      margin: 0 auto 8px;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-family: "Noto Sans SC", sans-serif;
+      font-size: 13px;
+    }
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    nav.toc a:hover { border-bottom-color: var(--accent); }
+    section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px 24px 8px;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 28px 0 8px;
+    }
+    .section-lead {
+      font-family: "Noto Sans SC", sans-serif;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .card.hero, .card.wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+    }
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #ddd6cb;
+    }
+    .card.hero img, .card.wide img { height: 100%; min-height: 320px; }
+    .meta { padding: 16px 18px 18px; }
+    .num {
+      font-family: "Noto Sans SC", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin: 0 0 6px;
+    }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p { margin: 0 0 8px; font-family: "Noto Sans SC", sans-serif; font-size: 14px; line-height: 1.65; color: #3f3832; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+    .tag {
+      font-family: "Noto Sans SC", sans-serif;
+      font-size: 11px;
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .tag.ok { color: #21543a; border-color: #b7d4c3; }
+    .tag.warn { color: #7a4b12; border-color: #e2c89a; }
+    .src { font-size: 12px; color: var(--muted); }
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+      font-family: "Noto Sans SC", sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    @media (max-width: 800px) {
+      .card.hero, .card.wide { grid-template-columns: 1fr; }
+      .card.hero img, .card.wide img { min-height: 220px; height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">畅游赤壁 · 照片挑选</p>
+    <h1>20张赤壁文旅宣传照片</h1>
+    <p class="lead">按站点叙事挑，不按网上最火的图堆。只收能核对是湖北赤壁市的实拍：三国古战场、羊楼洞、陆水湖与城区。黄州东坡赤壁一律不收。</p>
+    <div class="stats">
+      <span class="stat">古战场 7 张</span>
+      <span class="stat">羊楼洞 / 茶史 6 张</span>
+      <span class="stat">陆水湖 / 城区 7 张</span>
+      <span class="stat">可直接商用（CC/公有领域）11 张</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#battlefield">走进赤壁 · 古战场</a>
+    <a href="#yangloudong">带走赤壁 · 羊楼洞</a>
+    <a href="#lushui">一座城 · 陆水与夜景</a>
+  </nav>
+
+  <section id="battlefield">
+    <h2>走进赤壁 · 三国古战场</h2>
+    <p class="section-lead">先给辨识度，再给可玩的夜。主视觉用摩崖和楼船，转化用演艺、烟花、东风街。</p>
+    <div class="grid">
+      <article class="card hero">
+        <img src="02_cliff_and_warship.jpg" alt="赤壁摩崖与仿古楼船">
+        <div class="meta">
+          <p class="num">01 / 主视觉</p>
+          <h3>摩崖「赤壁」与仿古楼船</h3>
+          <p>最完整的品牌画面：江、崖、红字、战船同框。适合首页头图、海报、对外介绍片开场。</p>
+          <div class="tags"><span class="tag">古战场</span><span class="tag">头图</span><span class="tag warn">新闻稿件，商用需授权</span></div>
+          <p class="src">来源：人民网 / 三国赤壁古战场景区通稿构图</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="01_cliff_inscription.jpg" alt="赤壁摩崖石刻特写">
+        <div class="meta">
+          <p class="num">02</p>
+          <h3>摩崖石刻特写</h3>
+          <p>全世界维基条目都用这张认「武赤壁」。字口清楚，适合Logo旁、导视、文物说明。分辨率偏低，不宜大幅喷绘。</p>
+          <div class="tags"><span class="tag">地标</span><span class="tag ok">CC BY-SA 3.0</span></div>
+          <p class="src">Wikimedia Commons · File:Chibi.jpg · 2003</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="03_battlefield_gate.jpg" alt="三国赤壁古战场景区大门">
+        <div class="meta">
+          <p class="num">03</p>
+          <h3>景区大门 / 赤壁谯楼</h3>
+          <p>匾额「三国赤壁古战场」直接出镜，适合交通导引、门票页、到站第一印象。</p>
+          <div class="tags"><span class="tag">入口</span><span class="tag ok">CC BY-SA 4.0</span></div>
+          <p class="src">Wikimedia Commons · Ddayzzz · 2015</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="04_jiedongfeng_show.jpg" alt="《赤壁·借东风》实景剧">
+        <div class="meta">
+          <p class="num">04</p>
+          <h3>《赤壁·借东风》实景剧</h3>
+          <p>把「知道那场仗」变成「能上场」。适合夜游、演艺、过夜转化。</p>
+          <div class="tags"><span class="tag">演艺</span><span class="tag warn">人民网记者作品，商用需授权</span></div>
+          <p class="src">人民网记者 周恬 · 2026-04-18</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="05_night_performance.jpg" alt="古战场夜间演艺大场面">
+        <div class="meta">
+          <p class="num">05</p>
+          <h3>夜间演艺大场面</h3>
+          <p>城楼、阵列、光柱，证明景区不是只看门头。适合短视频封面、夜场海报。</p>
+          <div class="tags"><span class="tag">夜游</span><span class="tag warn">中新网湖北，含水印</span></div>
+          <p class="src">中新网湖北 hb.chinanews.com · 2025-05-19</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="06_fireworks_night.jpg" alt="焰遇大美赤壁烟花秀">
+        <div class="meta">
+          <p class="num">06</p>
+          <h3>「焰遇·大美赤壁」烟花</h3>
+          <p>节庆与夜经济。适合五一、暑期、周末场次预热。</p>
+          <div class="tags"><span class="tag">节庆</span><span class="tag warn">中新网湖北，含水印</span></div>
+          <p class="src">中新网 · 陈红菊 摄 · 2025-05-18</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="07_dongfeng_street_night.jpg" alt="赤壁东风街夜市">
+        <div class="meta">
+          <p class="num">07</p>
+          <h3>东风街夜市</h3>
+          <p>灯笼、船形店招、赤壁二字在招牌上。适合「有东西可吃、可逛、可留」。</p>
+          <div class="tags"><span class="tag">夜经济</span><span class="tag warn">中新网湖北，含水印</span></div>
+          <p class="src">中新网湖北 · 2025-05-19</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="yangloudong">
+    <h2>带走赤壁 · 羊楼洞与茶</h2>
+    <p class="section-lead">古镇负责把记忆做成东西。现拍证明「还能走上去」，1874 年照片证明「这茶走过万里」。</p>
+    <div class="grid">
+      <article class="card wide">
+        <img src="09_yangloudong_street.jpg" alt="羊楼洞明清石板街牌坊">
+        <div class="meta">
+          <p class="num">08 / 主视觉</p>
+          <h3>羊楼洞牌坊与石板街</h3>
+          <p>「羊楼洞」三字横在巷口，红灯笼、青砖、石板路齐了。适合古镇头图、汉服旅拍引流。</p>
+          <div class="tags"><span class="tag">古镇</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · File:Yangloudong2.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="08_yangloudong_stele.jpg" alt="羊楼洞明清石板街文保碑">
+        <div class="meta">
+          <p class="num">09</p>
+          <h3>明清石板街文保碑</h3>
+          <p>省保单位身份一眼可读。适合导览说明、申遗与研学材料。</p>
+          <div class="tags"><span class="tag">文保</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · File:Yangloudong1.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="10_brick_tea_hometown.jpg" alt="中国砖茶之乡石碑">
+        <div class="meta">
+          <p class="num">10</p>
+          <h3>「中国砖茶之乡」</h3>
+          <p>城市第二张名片。适合伴手礼、茶产业、万里茶道线。</p>
+          <div class="tags"><span class="tag">茶</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · File:Yangloudong5.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="11_tea_grading_1874.png" alt="1874年羊楼洞拣茶">
+        <div class="meta">
+          <p class="num">11</p>
+          <h3>1874 · 拣茶</h3>
+          <p>世界数字图书馆旧照。适合博物馆茶史展、青砖茶故事、不与现代景区抢镜头。</p>
+          <div class="tags"><span class="tag">茶史</span><span class="tag ok">公有领域</span></div>
+          <p class="src">WDL2052 · Yangloudong Village, 1874</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="12_tea_drying_1874.png" alt="1874年羊楼洞焙茶">
+        <div class="meta">
+          <p class="num">12</p>
+          <h3>1874 · 焙茶</h3>
+          <p>工艺现场。可与今天的压制体验对照，讲「带走一块茶砖」从哪来。</p>
+          <div class="tags"><span class="tag">工艺</span><span class="tag ok">公有领域</span></div>
+          <p class="src">WDL2053 · Yangloudong Village, 1874</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="13_tea_weighing_1874.png" alt="1874年羊楼洞茶商评茶过磅">
+        <div class="meta">
+          <p class="num">13</p>
+          <h3>1874 · 评茶过磅</h3>
+          <p>贸易现场。适合万里茶道、中蒙俄线路、国际传播。</p>
+          <div class="tags"><span class="tag">茶道</span><span class="tag ok">公有领域</span></div>
+          <p class="src">WDL2054 · Yangloudong Village, 1874</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="lushui">
+    <h2>一座城 · 陆水湖与城区</h2>
+    <p class="section-lead">古战场在镇里，游客住在城里。湖和夜景负责证明：来了能停、晚上有景。</p>
+    <div class="grid">
+      <article class="card wide">
+        <img src="14_lushui_aerial_islands.jpg" alt="陆水湖千岛航拍">
+        <div class="meta">
+          <p class="num">14 / 主视觉</p>
+          <h3>陆水湖千岛航拍</h3>
+          <p>鄂南千岛的尺度。适合自然线、两日游、和三国线对仗。</p>
+          <div class="tags"><span class="tag">陆水湖</span><span class="tag warn">湖北日报通稿，商用需授权</span></div>
+          <p class="src">湖北日报客户端 · 陆水湖航拍报道</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="15_lushui_aerial_harbor.jpg" alt="陆水湖码头航拍">
+        <div class="meta">
+          <p class="num">15</p>
+          <h3>陆水湖码头与游船</h3>
+          <p>有船可上，不是空湖。适合线路页、亲子与休闲。</p>
+          <div class="tags"><span class="tag">游船</span><span class="tag warn">湖北日报通稿，商用需授权</span></div>
+          <p class="src">湖北日报客户端 · 陆水湖航拍报道</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="16_lushui_bridge_night.jpg" alt="陆水大桥夜景">
+        <div class="meta">
+          <p class="num">16</p>
+          <h3>陆水大桥夜景</h3>
+          <p>城区夜色。适合「住一晚」和城市会客厅。</p>
+          <div class="tags"><span class="tag">夜景</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · Lushui Bridge at night.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="20_lushui_bridge_day.jpg" alt="陆水大桥日景">
+        <div class="meta">
+          <p class="num">17</p>
+          <h3>陆水大桥日景</h3>
+          <p>同一座桥的白天。宣传优先级低于夜景，但可作城市日常。</p>
+          <div class="tags"><span class="tag">城区</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · Chibi Bridge.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="17_lushui_riverside.jpg" alt="陆水河畔步道">
+        <div class="meta">
+          <p class="num">18</p>
+          <h3>陆水河畔</h3>
+          <p>可散步的岸。适合宜居、慢游，不宜当头图。</p>
+          <div class="tags"><span class="tag">慢游</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · Lushui River 1.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="18_tonghui_gate_night.jpg" alt="通汇门夜景">
+        <div class="meta">
+          <p class="num">19</p>
+          <h3>通汇门夜景</h3>
+          <p>古城墙点亮。适合城区夜游、历史层与现代灯的对照。</p>
+          <div class="tags"><span class="tag">古城</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · Ancient City wall in Chibi at night.jpg</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="19_tonghui_gate_passage.jpg" alt="通汇门门洞">
+        <div class="meta">
+          <p class="num">20</p>
+          <h3>通汇门门洞</h3>
+          <p>从门洞望出去。适合「一座城」的转场，不要误写成古战场大门。</p>
+          <div class="tags"><span class="tag">古城</span><span class="tag ok">CC BY-SA 4.0 · 高像素</span></div>
+          <p class="src">Wikimedia Commons · Ancient City Wall in Chibi 2.jpg</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>怎么用：</strong>对外主视觉优先 01、08、14。可直接进印刷和网站的，优先带「CC / 公有领域」标签的 11 张。中新网、人民网、湖北日报的图适合提案内部示意；正式投放要向原单位要原片。</p>
+    <p><strong>全网缺口：</strong>赤壁市博物馆外观与展陈、周瑜石雕像、拜风台、凤雏庵千年银杏，公开可核实地名的高清实拍很少。这四张建议向景区和博物馆要官方通稿，不要用黄州东坡赤壁或影视剧照顶上。</p>
+    <p>挑选日期 2026-09-02。文件在本目录，用浏览器打开本页即可对照。</p>
+  </footer>
+</body>
+</html>
